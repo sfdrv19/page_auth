@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(36)),
         borderSide: BorderSide(
           color: const Color(0xFFbbbbbb), width: 2));
+      const linkTextStyle = TextStyle(
+          fontSize: 16,
+          color: Color(0xFF0079D0));
 
     return MaterialApp(
       home: Scaffold(
@@ -61,15 +64,11 @@ class MyApp extends StatelessWidget {
                 ),)),
               SizedBox(height: 62,),
               InkWell(child: const Text('Регистрация',
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Color(0xFF0079D0))),
+                  style: linkTextStyle),
                 onTap: () {},),
               SizedBox(height: 20,),
               InkWell(child: const Text('Забыли пароль?',
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Color(0xFF0079D0))),
+                  style: linkTextStyle),
                 onTap: () {},),
             ],),
           )
