@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             ),
             width: double.infinity,
             height: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 55),
             child: SingleChildScrollView(
               child: Column(children:  [
                 const SizedBox(height: 60,),
