@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       const borderStyle = OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(36)),
         borderSide: BorderSide(
-          color: const Color(0xFFbbbbbb), width: 2));
+          color: Color(0xFFbbbbbb), width: 2));
       const linkTextStyle = TextStyle(
           fontSize: 16,
           color: Color(0xFF0079D0));
@@ -21,23 +21,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           body: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/bg.jpg'),
                 fit: BoxFit.fill,
               )
             ),
             width: double.infinity,
-            child: Column(children:  [
-              SizedBox(height: 60,),
-              SizedBox(width:110, height: 84, child: Image(image: AssetImage('assets/dart-logo.png'),),),
-              SizedBox(height: 20,),
-              Text('Введите логин в виде 10 цифр номера телефона',
-              style: TextStyle(fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.6)),
-              textAlign: TextAlign.center,),
-              SizedBox(height: 20,),
-              const SizedBox(width: 224,
-                child: TextField(
+            height: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: SingleChildScrollView(
+              child: Column(children:  [
+                const SizedBox(height: 60,),
+                const SizedBox(
+                  width:110,
+                  height: 84,
+                  child: Image(image: AssetImage('assets/dart-logo.png'),),),
+                const SizedBox(height: 20,),
+                const Text('Введите логин в виде 10 цифр номера телефона',
+                style: TextStyle(fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.6)),
+                textAlign: TextAlign.center,),
+                const SizedBox(height: 20,),
+                const TextField(
+                  keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Color(0xFFeceff1),
@@ -46,10 +52,8 @@ class MyApp extends StatelessWidget {
                     labelText: 'Телефон',
                   ),
                 ),
-              ),
-              SizedBox(height: 20,),
-              const SizedBox(width: 224,
-                child: TextField(
+                const SizedBox(height: 20,),
+                const TextField(
                   obscureText: true,
                   decoration: InputDecoration(
                     filled: true,
@@ -59,25 +63,26 @@ class MyApp extends StatelessWidget {
                     labelText: 'Пароль',
                   ),
                 ),
-              ),
-              SizedBox(height: 28,),
-              SizedBox(width: 154, height: 42,child:
-                ElevatedButton(onPressed: () {}, child: Text('Войти'),
-                style: ElevatedButton.styleFrom(
-                  primary: Color(0xFF0079D0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(22.0),
-                  )
-                ),)),
-              SizedBox(height: 62,),
-              InkWell(child: const Text('Регистрация',
-                  style: linkTextStyle),
-                onTap: () {},),
-              SizedBox(height: 20,),
-              InkWell(child: const Text('Забыли пароль?',
-                  style: linkTextStyle),
-                onTap: () {},),
-            ],),
+                const SizedBox(height: 28,),
+                SizedBox(width: 154, height: 42,child:
+                  ElevatedButton(onPressed: () {},
+                    child: const Text('Войти'),
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color(0xFF0079D0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(22.0),
+                    )
+                  ),)),
+                const SizedBox(height: 62,),
+                InkWell(child: const Text('Регистрация',
+                    style: linkTextStyle),
+                  onTap: () {},),
+                const SizedBox(height: 20,),
+                InkWell(child: const Text('Забыли пароль?',
+                    style: linkTextStyle),
+                  onTap: () {},),
+              ],),
+            ),
           )
       ),
     );
