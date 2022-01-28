@@ -7,13 +7,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
       const borderStyle = OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(36)),
         borderSide: BorderSide(
-          color: Color(0xFFbbbbbb), width: 2));
+          color: Color(0xFF0079D0), width: 1.5));
       const linkTextStyle = TextStyle(
           fontSize: 16,
           color: Color(0xFF0079D0));
